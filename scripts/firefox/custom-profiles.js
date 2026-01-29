@@ -25,6 +25,8 @@ chrome.storage.local.get(['customProfiles'], result => {
 
             fontName = '';
             colorName = '';
+            pfpID = '';
+            pfpID = '';
 
             if (match) {
                 const styleString = match[1];
@@ -35,6 +37,7 @@ chrome.storage.local.get(['customProfiles'], result => {
                     if (key === 'font') fontName = value;
                     if (key === 'color') colorName = value;
                     if (key === 'pfp') pfpID = value;
+                    if (key === 'ft') followers = value;
                 });
 
                 const cleanBio = bioText.replace(stylePattern, '').trim();
@@ -131,6 +134,18 @@ chrome.storage.local.get(['customProfiles'], result => {
             ico.appendChild(img);
         }
 
+
+        // set follower title
+        //if (followers != '') {
+            const eas = document.querySelectorAll(".user-stat");
+            eas.forEach((ea) => {
+                if (ea.textContent.toLowerCase().includes("followers")) {
+                    const ws = ea.textContent.split(" ");
+                    const nt = ws[0] + " " + followers;
+                    ea.textContent = nt;
+                }
+            });
+        //}
 
     }
 
