@@ -15,12 +15,12 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   }
   if (message.type === "load_data") {
     console.log("attempting to load data")
-    const loginMsg = document.querySelector(".user-login");
-    const userTitle = document.querySelector(".user-title");
-    const username = document.querySelector(".user-title-text");
-    const ico = document.querySelector(".user-title-ico");
-    const points = document.querySelector(".user-title-pts");
-    const msgs = document.querySelector(".user-title-msgs");
+  const loginMsg = document.querySelector(".user-login");
+  const userTitle = document.querySelector(".user-title");
+  const username = document.querySelector(".user-title-text");
+  const ico = document.querySelector(".user-title-ico");
+  const points = document.querySelector(".user-title-pts");
+  const msgs = document.querySelector(".user-title-msgs");
 
     if (loginMsg) loginMsg.style.display = "none";
     if (userTitle) userTitle.style.display = "flex";
@@ -33,14 +33,21 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       if (msgs) msgs.style.stroke = "#ccc";
     }
 
-
-
-    username.addEventListener('click', function() {
-      chrome.tabs.create({active: true, url: `https://imgflip.com/user/${message.data.user.user}`});
-    });
-    msgs.addEventListener('click', function() {
-      chrome.tabs.create({active: true, url: "https://imgflip.com/memechat"});
-    });
+    // Prevent multiple listeners by removing any previous click event
+    if (username) {
+      username.replaceWith(username.cloneNode(true));
+      const newUsername = document.querySelector(".user-title-text");
+      newUsername.addEventListener('click', function() {
+        chrome.tabs.create({active: true, url: `https://imgflip.com/user/${message.data.user.user}`});
+      });
+    }
+    if (msgs) {
+      msgs.replaceWith(msgs.cloneNode(true));
+      const newMsgs = document.querySelector(".user-title-msgs");
+      newMsgs.addEventListener('click', function() {
+        chrome.tabs.create({active: true, url: "https://imgflip.com/memechat"});
+      });
+    }
   }
 });
 
