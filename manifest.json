@@ -39,7 +39,6 @@
               "scripts/return_fpb.js",
               "scripts/memechat_imgs.js",
               "scripts/splitscreen_streams.js",
-              "scripts/block_watermark.js",
               "scripts/total-followed.js",
               
               "settings/options.js"
@@ -94,3 +93,4 @@
 "options_page": "settings/options.html"
 
 }
+
