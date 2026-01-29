@@ -144,6 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
       "dark-purple",
       "orange",
       "sky",
+      "suspicious-green",
       ];
     const vars = ["--maincolor",
       "--subcolor",
