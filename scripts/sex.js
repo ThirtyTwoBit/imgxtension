@@ -6,3 +6,26 @@ if (typeof window !== "undefined" && window.location.href.includes("imgflip.com/
 
     document.title = 'sex';
 }
+
+
+const now = new Date();
+console.log("date");
+const isAprilFools =
+  now.getMonth() === 3 &&  // April (0 = January)
+  now.getDate() === 1;
+const year = now.getFullYear;
+
+const rand = Math.floor(Math.random() * 3) + 1; // Returns 1, 2, or 3   
+
+if (isAprilFools && rand == 1 && typeof window !== "undefined" && window.location.href.includes("imgflip.com")) {
+    box = document.getElementById('panel');
+    html = `<div class="shutdown-banner">ALERT: Early warning. Imgflip.com will be shutting down effective November 2nd, ${year}. Thank you for the decade of amazing memes!
+    <span class="shutdown-btn">[Close]</span></div>`;
+    box.innerHTML += html;
+
+    box.querySelector(".shutdown-btn")
+    .addEventListener("click", () => {
+        box.querySelector(".shutdown-banner")
+        .remove();
+    });
+}
