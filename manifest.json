@@ -1,7 +1,7 @@
 {
   "name": "imgxtension",
   "description": "Extension for modifying the imgflip website for a better user experience.",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "manifest_version": 3,
   "permissions": [
     "storage",
@@ -37,6 +37,10 @@
               "scripts/pin_memechats.js",
               "scripts/sex.js",
               "scripts/return_fpb.js",
+              "scripts/memechat_imgs.js",
+              "scripts/splitscreen_streams.js",
+              "scripts/block_watermark.js",
+              "scripts/total-followed.js",
               
               "settings/options.js"
             ],
@@ -58,6 +62,7 @@
                   "themes/dark-purple.css",
                   "themes/orange.css",
                   "themes/sky.css",
+                  "theme/suspicious-green.css",
 
                   "fonts/papyrus.ttf",
                   "fonts/comic-sans.ttf",
