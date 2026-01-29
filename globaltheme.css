@@ -1,6 +1,9 @@
 .chat {
     overflow: hidden;
 }
+.chat:hover {
+    overflow: visible;
+}
 
 .make-item {
     display: flex !important;
@@ -37,4 +40,5 @@
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+
 }
