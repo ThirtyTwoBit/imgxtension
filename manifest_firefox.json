@@ -1,7 +1,7 @@
 {
   "name": "imgxtension",
   "description": "Extension for modifying the imgflip website for a better user experience.",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "manifest_version": 2,
   "permissions": [
     "storage",
@@ -15,7 +15,7 @@
     "default_popup": "popup/index.html",
     "default_icon": "imgicon.png"
   },
- "background": { "scripts": ["scripts/background.js"] },
+ "background": { "scripts": ["scripts/firefox/background.js"] },
 
   "content_scripts": [
     {
@@ -35,6 +35,9 @@
               "scripts/sex.js",
               "scripts/return_fpb.js",
               "scripts/settings-btn.js",
+              "scripts/memechat_imgs.js",
+              "scripts/splitscreen_streams.js",
+              "scripts/total-followed.js",
               
               "settings/options.js"
             ],
@@ -43,7 +46,7 @@
   ],
 
   "web_accessible_resources": [
- "themes.css",
+                 "themes.css",
                   "scripts/flip-buttons.css",
                   "scripts/top-posts.css",
                   "scripts/pin_memechats.css",
@@ -55,6 +58,7 @@
                   "themes/dark-purple.css",
                   "themes/orange.css",
                   "themes/sky.css",
+                  "themes/suspicious-green.css",
 
                   "fonts/papyrus.ttf",
                   "fonts/comic-sans.ttf",
@@ -77,7 +81,12 @@
                   "fonts/mojangles.ttf",
                   "fonts/impact.ttf",
                   "fonts/ubuntu.ttf",
-                  "fonts/slackey.ttf"
+                  "fonts/slackey.ttf",
+
+                  "images/msmg-pc.svg",
+                  "images/msmg-mobile.svg",
+                  "images/imgmob-hue.png",
+                  "images/imgflip-hue.png"
 
 
 ],
