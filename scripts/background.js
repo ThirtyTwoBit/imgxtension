@@ -114,6 +114,7 @@ chrome.runtime.onInstalled.addListener(() => {
 
 
 /* ADDS THE NOTIFICATION AND POPUP UPDATES */
+const actionAPI = chrome.action || chrome.browserAction;
 
 function fetchData() {
   fetch("https://imgflip.com/ajax_get_le_data", {
@@ -129,8 +130,8 @@ function fetchData() {
       const notificationCount = data.user && data.user.nots !== undefined ? String(data.user.nots) : "";
       if (data.user.id !== 0) {
         //set badge to notifs
-        chrome.browserAction.setBadgeText({ text: notificationCount });
-        chrome.browserAction.setBadgeBackgroundColor({ color: "#D72E62" });
+        actionAPI.setBadgeText({ text: notificationCount });
+        actionAPI.setBadgeBackgroundColor({ color: "#D72E62" });
         console.log(`set notif count to ${notificationCount}`);
         try {
           chrome.runtime.sendMessage({ type: "load_data", data: data });
