@@ -3,6 +3,7 @@
 }
 .chat:hover {
     overflow: visible;
+    height: auto;
 }
 
 .make-item {
@@ -42,3 +43,4 @@
     -webkit-box-sizing: border-box;
 
 }
+
