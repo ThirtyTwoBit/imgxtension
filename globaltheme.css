@@ -1,0 +1,40 @@
+.chat {
+    overflow: hidden;
+}
+
+.make-item {
+    display: flex !important;
+    padding-bottom: 2px;
+}
+
+.shutdown-banner {
+    width: calc(100% - 30px);
+    margin: auto;
+    text-align: center;
+}
+
+.shutdown-btn {
+    margin-left: 10px;
+}
+.shutdown-btn:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.darkmode #base-left2 {
+    background: #333;
+    border-color: #666;
+}
+#base-left2 {
+    float: left;
+    width: 740px;
+    max-width: 100%;
+    padding: 19px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    position: relative;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
