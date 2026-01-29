@@ -35,7 +35,7 @@
                 <div class="setting-drop" state="hidden" data-setting="mcImgs">
                     <svg class="drop-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" width="18" height="18"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>
                 </div>
-                <span class="setting-title">Images in Memechat</span><span class="new">New</span>
+                <span class="setting-title">Images in Memechat</span>
                 <div class="setting-topspacer"></div>
                 <div class="switch" state="off" data-setting="mcImgs"></div>
             </div>
@@ -55,7 +55,7 @@
                 <div class="setting-drop" state="hidden" data-setting="split">
                     <svg class="drop-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" width="18" height="18"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>
                 </div>
-                <span class="setting-title">Splitscreen Streams</span><span class="new">New</span>
+                <span class="setting-title">Splitscreen Streams</span>
                 <div class="setting-topspacer"></div>
                 <div class="switch" state="off" data-setting="split"></div>
             </div>
@@ -75,7 +75,7 @@
                 <div class="setting-drop" state="hidden" data-setting="totalFollow">
                     <svg class="drop-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" width="18" height="18"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>
                 </div>
-                <span class="setting-title">Show Followed User Count</span><span class="new">New</span>
+                <span class="setting-title">Show Followed User Count</span><!---span class="new">New</span--->
                 <div class="setting-topspacer"></div>
                 <div class="switch" state="off" data-setting="totalFollow"></div>
             </div>
@@ -281,8 +281,8 @@
                 <p>
                     Use different fonts on the website. Replaces all text with the selected font. Overridden by the Custom Profiles option.
                 </p>
-                <p>
-                    Fonts:
+                <p id="fontpicked">
+                    Click a font to select:
                 </p>
                 <!--font btn selectors-->
                 <div id="font-btns" class="btn-container">
@@ -352,6 +352,9 @@
                     <div class="font-btn" data-font="21" title="Slackey">
                         <img style="width: 20px;" src="../fonts/font-icons/msmg-purple.svg">
                     </div>
+                    <div class="font-btn" data-font="21" title="Montserrat">
+                        <img style="width: 20px;" src="../fonts/font-icons/msmg-purple.svg">
+                    </div>
                 </div>
                 <p style="font-size: 13px;">
                     Credits: <span><a href="https://imgflip.com/user/32-Bit">32-Bit</a>  <a href="https://imgflip.com/user/the_meme_rag">Meme Rag (Art)</a></span>
@@ -413,9 +416,10 @@
                 <p>
                     Lets users edit their profiles by adding content to their tagline.<br>
                     To edit your profile, add to your tagline with the following options, examples provided:<br>
-                    <span style="color:var(--impcolor-blu-o)">{font:"comic-sans", color:"#ffffff", pfp:"9geor3"}</span><br>
+                    <span style="color:var(--impcolor-blu-o)">{font:"comic-sans", color:"#ffffff", pfp:"9geor3", ft:"minions"}</span><br>
                     Do not include options you don't want to use, e.g. if you only want to add a font then just put {font:"font-name"}.<br>
                     Avaialable fonts are the ones listed under the "Site Fonts" feature. All fonts must be in lowercase and use "-" instead of spaces.
+                    For the "ft" field, special characters like : and ' are not permitted.
                 </p>
                 <p style="font-size: 13px;">
                     Credits: <span><a href="https://imgflip.com/user/32-Bit">32-Bit</a></span>

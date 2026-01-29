@@ -92,6 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.font-btn').forEach(switchEl => {
       switchEl.addEventListener('click', () => {
         const key = switchEl.dataset.font;
+        const title = switchEl.title;
         // Save to storage
         chrome.storage.local.set({ font: key }, () => {
           console.log(`Setting "font" set to ${key}`);
@@ -102,6 +103,10 @@ document.addEventListener('DOMContentLoaded', () => {
           btn.style.borderColor = "var(--subcolor-o)";  // Reset others
         });
         switchEl.style.borderColor = "var(--impcolor-blu-o)";
+
+      // set text to display cur font
+      document.getElementById("fontpicked")
+      .textContent = title;
       });
     });
 

@@ -15,7 +15,7 @@
     --customco-3: #00bff3;
 }
 
-*:not(.check-red, img, .has-unread) {
+*:not(.check-red, img, .has-unread, .color-slider-2d, .color-slider, .mark) {
     border-color: var(--border-color) !important;
     border-width: var(--border-thicc) !important;
     /*stroke: var(--border-color);*/
@@ -28,7 +28,7 @@ body, body.darkmode, .user-stat, .user-stats, .home-create-btns, .base-options, 
 }
 
 
-textarea, div:not(.ico, .ico-pixel, .ico-pixel-btn, .mm-preview, .make-icon-demo, .color-box, .com, .user-stats, .user-stat, .drag-box, .base-options, .stream-description, .c-new-btn-wrap, .img-coms-header, .img-coms, .c-new-text, .color-btn, .img-flag-top, .img-flag-bottom), button:not(.check-red, .ico-color-btn, .c-reply, .c-flag, .c-delete, .c-img-link), #done, .nt-not, .ibox, .clearfix, .login-box, .c-right, .i-select-dropdown, .user-com, .shr-popup, .BOX, .menu, .pager-next-l-but, .home-img, .recaption.l.but, #chat-main, #chat-list, #base-left, #panel-back, #footer {
+textarea, div:not(.color-slider-2d, .color-bg1, .color-bg2, .color-popup.ibox, .color-slider-wrap, .color-slider-2d-wrap, .color-slider, .slide-bar, .fill, .mark, .aq-box-outline, .ico, .ico-pixel, .ico-pixel-btn, .mm-preview, .make-icon-demo, .color-box, .com, .user-stats, .user-stat, .drag-box, .base-options, .stream-description, .c-new-btn-wrap, .img-coms-header, .img-coms, .c-new-text, .color-btn, .img-flag-top, .img-flag-bottom), button:not(.check-red, .ico-color-btn, .c-reply, .c-flag, .c-delete, .c-img-link), #done, .nt-not, .ibox, .clearfix, .login-box, .c-right, .i-select-dropdown, .user-com, .shr-popup, .BOX, .menu, .pager-next-l-but, .home-img, .recaption.l.but, #chat-main, #chat-list, #base-left, #panel-back, #footer {
     background: var(--subcolor) !important;
     color: var(--fontcolor) !important;
 }
@@ -80,7 +80,7 @@ textarea, div:not(.ico, .ico-pixel, .ico-pixel-btn, .mm-preview, .make-icon-demo
 }
 
 
-#u-msgs-btn.has-unread svg .make-icon-demo{
+#u-msgs-btn.has-unread svg .make-icon-demo {
     stroke: var(--impcolor-blu) !important;
 }
 #nt-count.has-nots {
@@ -125,9 +125,6 @@ textarea, div:not(.ico, .ico-pixel, .ico-pixel-btn, .mm-preview, .make-icon-demo
     background: var(--customco-3) !important;
 }
 
-#flip-box {
-    background: var(--subcolor) !important;
-}
 .base-latest.on{
     background: var(--customco-3) !important;
 }
@@ -157,4 +154,16 @@ textarea, div:not(.ico, .ico-pixel, .ico-pixel-btn, .mm-preview, .make-icon-demo
 .fav-star.set {
     stroke: var(--impcolor-blu) !important;
     fill: var(--impcolor-blu) !important;
+}
+
+
+.fill {
+    background: var(--impcolor-blu) !important;
+}
+.slide-bar {
+    background: var(--maincolor) !important;
+}
+
+.b.but.g-make-btn {
+    background: var(--impcolor-blu) !important;
 }

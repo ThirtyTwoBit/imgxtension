@@ -31,6 +31,7 @@ chrome.storage.local.get(['useFont'], result => {
                         "impact",
                         "ubuntu",
                         "slackey",
+                        "montserrat",
                         ];
 
         let html

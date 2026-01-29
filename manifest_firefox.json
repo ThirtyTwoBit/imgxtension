@@ -1,7 +1,7 @@
 {
   "name": "imgxtension",
   "description": "Extension for modifying the imgflip website for a better user experience.",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "manifest_version": 2,
   "permissions": [
     "storage",
@@ -20,6 +20,7 @@
   "content_scripts": [
     {
       "matches": ["*://*.imgflip.com/*"],
+      "css":["globaltheme.css"],
       "js": ["scripts/break_ads.js", 
               "scripts/update-theme.js", 
               "scripts/flip-buttons.js",
@@ -47,6 +48,7 @@
 
   "web_accessible_resources": [
                  "themes.css",
+                 "globaltheme.css",
                   "scripts/flip-buttons.css",
                   "scripts/top-posts.css",
                   "scripts/pin_memechats.css",
@@ -82,6 +84,7 @@
                   "fonts/impact.ttf",
                   "fonts/ubuntu.ttf",
                   "fonts/slackey.ttf",
+                  "fonts/montserrat.ttf",
 
                   "images/msmg-pc.svg",
                   "images/msmg-mobile.svg",
@@ -93,4 +96,3 @@
 "options_page": "settings/options.html"
 
 }
-
