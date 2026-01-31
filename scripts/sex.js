@@ -13,7 +13,7 @@ console.log("date");
 const isAprilFools =
   now.getMonth() === 3 &&  // April (0 = January)
   now.getDate() === 1;
-const year = now.getFullYear;
+const year = now.getFullYear();
 
 const rand = Math.floor(Math.random() * 3) + 1; // Returns 1, 2, or 3   
 
