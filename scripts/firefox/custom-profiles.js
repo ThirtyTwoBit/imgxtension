@@ -26,7 +26,7 @@ chrome.storage.local.get(['customProfiles'], result => {
             fontName = '';
             colorName = '';
             pfpID = '';
-            pfpID = '';
+            followers = '';
 
             if (match) {
                 const styleString = match[1];
@@ -120,7 +120,7 @@ chrome.storage.local.get(['customProfiles'], result => {
 
         // set profile picture
         const ico = document.querySelector('#user-title .ico');
-        if (ico) {
+        if (ico && pfpID != '') {
             const img = document.createElement('img');
             img.src = `https://i.imgflip.com/${pfpID}.jpg`;
             img.width = 27;
