@@ -1,7 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("settingsBtn").addEventListener("click", function() {
-      chrome.runtime.openOptionsPage();  // Opens the options page
+    chrome.runtime.openOptionsPage();  // Opens the options page
+  });
+  document.getElementById("updatesBtn").addEventListener("click", function () {
+    chrome.tabs.create({
+      url: chrome.runtime.getURL("settings/update.html")
     });
+  });
 });
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
