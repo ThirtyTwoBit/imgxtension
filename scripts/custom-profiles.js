@@ -25,6 +25,7 @@ chrome.storage.local.get(['customProfiles'], result => {
 
             fontName = '';
             colorName = '';
+            pfpID = '';
             followers = '';
 
             if (match) {
@@ -118,31 +119,34 @@ chrome.storage.local.get(['customProfiles'], result => {
         }
 
         // set profile picture
-        if (typeof pfpID != 'undefined') {
-            // create html
-            html = `<img 
-                        src="https://i.imgflip.com/${pfpID}.jpg"
-                        onerror="this.onerror=null; this.src='https://i.imgflip.com/${pfpID}.gif';"
-                        title="${pfpID}"
-                        style="width:27px; height:27px;"
-                    />
-                    `;
-            // generate html
-            let ico = document.querySelector('#user-title');
-            ico = ico.querySelector('.ico');
-            ico.innerHTML = html;
-
+        const ico = document.querySelector('#user-title .ico');
+        if (ico && pfpID != '') {
+            const img = document.createElement('img');
+            img.src = `https://i.imgflip.com/${pfpID}.jpg`;
+            img.width = 27;
+            img.height = 27;
+            img.title = pfpID;
+            img.onerror = () => {
+                img.onerror = null;
+                img.src = `https://i.imgflip.com/${pfpID}.gif`;
+            };
+            ico.innerHTML = '';  // Clear old content safely
+            ico.appendChild(img);
         }
+
 
         // set follower title
-        if (followers != '') {
-            ea = document.querySelectorAll(".user-stat");
-            e = ea[ea.length-1];
-            t = e.textContent;
-            ws = t.split(" ");
-            nt = ws[0] + " " + followers;
-            e.textContent = nt;
-        }
+        //if (followers != '') {
+            const eas = document.querySelectorAll(".user-stat");
+            eas.forEach((ea) => {
+                if (ea.textContent.toLowerCase().includes("followers")) {
+                    const ws = ea.textContent.split(" ");
+                    const nt = ws[0] + " " + followers;
+                    ea.textContent = nt;
+                }
+            });
+        //}
+
     }
 
 
