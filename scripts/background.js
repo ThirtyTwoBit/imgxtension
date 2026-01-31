@@ -21,17 +21,12 @@ chrome.runtime.onInstalled.addListener((details) => {
 // For MV3 Chrome and MV2 Firefox
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === "openOptions") {
-    if (chrome.runtime.openOptionsPage) {/*
-      chrome.runtime.openOptionsPage(() => {
-        if (chrome.runtime.lastError) {
-          // Fallback if openOptionsPage is not supported or errors out
-          chrome.tabs.update(sender.tab.id, { url: chrome.runtime.getURL("settings/options.html") });
-        }
-      });*/
-    /*} else {*/
-      // Older browsers or fallback
       chrome.tabs.update(sender.tab.id, { url: chrome.runtime.getURL("settings/options.html") });
-    }
+    
+  }
+  if (message.action === "openUpdates") {
+      chrome.tabs.update(sender.tab.id, { url: chrome.runtime.getURL("settings/update.html") });
+    
   }
 });
 
