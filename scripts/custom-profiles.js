@@ -70,6 +70,7 @@ chrome.storage.local.get(['customProfiles'], result => {
                         "impact",
                         "ubuntu",
                         "slackey",
+                        "montserrat",
                         ];
 
         let html
