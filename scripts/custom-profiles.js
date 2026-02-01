@@ -23,10 +23,10 @@ chrome.storage.local.get(['customProfiles'], result => {
             const stylePattern = /{([^}]+)}/;
             const match = bioText.match(stylePattern);
 
-            let fontName = '';
-            let colorName = '';
-            let pfpID = '';
-            let followers = '';
+            fontName = '';
+            colorName = '';
+            pfpID = '';
+            followers = '';
 
             if (match) {
                 const styleString = match[1];
@@ -77,7 +77,7 @@ chrome.storage.local.get(['customProfiles'], result => {
 
         // set profile font
         console.log(fontName);
-        if (typeof fontName != 'undefined' && fonts.includes(fontName)) {
+        if (typeof fontName != '' && fonts.includes(fontName)) {
             const fontUrl = chrome.runtime.getURL(`../fonts/${fontName}.ttf`);
             // create html
             html = `@font-face {
@@ -98,10 +98,12 @@ chrome.storage.local.get(['customProfiles'], result => {
                     head.appendChild(temp);
                     console.log('Appended font successfully');
                 }
+        } else {
+            console.log("nofont");
         }
 
         // set profile color
-        if (typeof colorName != 'undefined' && isValidHex(colorName)) {
+        if (typeof colorName != '' && isValidHex(colorName)) {
             // create html
             html = `#user-tagline, .u-username, .ico-pixel {
                         color: ${colorName} !important;
@@ -122,7 +124,7 @@ chrome.storage.local.get(['customProfiles'], result => {
         }
 
         // set profile picture
-        if (typeof pfpID != 'undefined') {
+        if (typeof pfpID != '') {
             // create html
             html = `<img 
                         src="https://i.imgflip.com/${pfpID}.jpg"
@@ -140,6 +142,7 @@ chrome.storage.local.get(['customProfiles'], result => {
 
         // set follower title
         if (followers != '') {
+            console.log("followers");
             const eas = document.querySelectorAll(".user-stat");
             eas.forEach((ea) => {
                 if (ea.textContent.toLowerCase().includes("followers")) {
@@ -148,6 +151,8 @@ chrome.storage.local.get(['customProfiles'], result => {
                     ea.textContent = nt;
                 }
             });
+        } else {
+            console.log("noFollowTitle");
         }
         
 
